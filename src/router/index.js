@@ -42,41 +42,78 @@ export const constantRoutes = [
     component: () => import('@/views/404'),
     hidden: true
   },
-
   {
     path: '/',
     component: Layout,
     redirect: '/dashboard',
-    meta: { title: '系统管理' },
     children: [{
       path: 'dashboard',
       name: 'Dashboard',
       component: () => import('@/views/dashboard/index'),
       meta: { title: '平台日志', icon: 'dashboard', affix: true }
-      
-    },
-    {
-      path: 'user-manage',
+
+    }]
+  },
+  {
+    path: 'sys-manage',
+    component: Layout,
+    redirect: '/user-manage',
+    meta: { title: '系统管理' },
+    children: [{
+      path: '/user-manage',
       name: 'UserManage',
+      component: () => import('@/views/user-manage/index'),
       meta: { title: '用户管理', icon: 'dashboard' }
     },
     {
-      path: 'role-manage',
+      path: '/role-manage',
       name: 'RoleManage',
+      component: () => import('@/views/role-manage/index'),
       meta: { title: '角色管理', icon: 'dashboard' }
     },
     {
-      path: 'menu-manage',
+      path: '/menu-manage',
       name: 'MenuManage',
+      component: () => import('@/views/menu-manage/index'),
       meta: { title: '菜单管理', icon: 'dashboard' }
     },
     {
-      path: 'api-manage',
+      path: '/api-manage',
       name: 'ApiManage',
+      component: () => import('@/views/api-manage/index'),
       meta: { title: '资源管理', icon: 'dashboard' }
     }]
   },
-
+  {
+    path: 'param-config',
+    component: Layout,
+    redirect: '/sys-param',
+    meta: { title: '参数配置' },
+    children: [{
+      path: '/sys-param',
+      name: 'SysParam',
+      component: () => import('@/views/sys-param/index'),
+      meta: { title: '系统参数', icon: 'dashboard' }
+    },
+    {
+      path: '/busi-param',
+      name: 'BusiParam',
+      component: () => import('@/views/busi-param/index'),
+      meta: { title: '业务参数', icon: 'dashboard' }
+    },
+    {
+      path: '/address',
+      name: 'Address',
+      component: () => import('@/views/address/index'),
+      meta: { title: '行政地区', icon: 'dashboard' }
+    },
+    {
+      path: '/industry',
+      name: 'Industry',
+      component: () => import('@/views/industry/index'),
+      meta: { title: '经济行业', icon: 'dashboard' }
+    }]
+  },
   {
     path: '/example',
     component: Layout,
