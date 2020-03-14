@@ -28,7 +28,7 @@
               <el-button
                 type="text"
                 size="mini"
-                @click="() => append(data)"
+                @click="() => edit(data)"
               >
                 编辑
               </el-button>
@@ -189,6 +189,10 @@ export default {
       const children = parent.data.children || parent.data
       const index = children.findIndex(d => d.id === data.id)
       children.splice(index, 1)
+    },
+
+    edit(data){
+      this.ruleForm.name = data.label;
     },
 
     filterNode(value, data) {

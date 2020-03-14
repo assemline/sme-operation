@@ -55,7 +55,8 @@ export default {
         'name': '字典分类一'
       },{
         'name': '字典分类二'
-      }]
+      }],
+      tableData:[]
     }
   }
 }
@@ -84,7 +85,7 @@ export default {
   background:#fff;
   padding:0px 20px 0px;
   margin-left: 20px;
-  width:calc(100vw - 600px);
+  width:calc(100vw - 610px);
   min-height: calc(100vh - 144px);
 }
 </style>
